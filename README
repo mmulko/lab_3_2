@@ -1,41 +1,47 @@
-# Lab_2_2
+# Lab_3_2
 ## Purpose
-Module for creating map of 10 or less nearest points to the given location of film production in asked year
-
+The goal is to read any json file got with Twitter API
 ## What we got?
-
-The map gives us visualisation of film production locations and distance between given location. This gives opportunity to see how far away movies are made.
-
+User-friendly navigation through json file
 ## Usage example
 
-python main.py
++---------------------+
+Enter .json file name
++---------------------+
+IMPORTANT: FILE MUST BE IN THE SAME FOLDER AS PROGRAM
+Input: friends_list_AdamMGrant.json
 
-Enter year: 2015
 
-Enter your location: 49.83826, 24.02324
+Choose your way:
++----------------------------------------------------------------------------------------------+
+[users] [next_cursor] [next_cursor_str] [previous_cursor]
+[previous_cursor_str] [total_count] 
++----------------------------------------------------------------------------------------------+
+Input: users
+Choose index between 0 and 9: 0
+Choose your way:
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+[id] [id_str] [name] [screen_name]
+[location] [description] [url]
+[entities] [protected] [followers_count]
+[friends_count] [listed_count] [created_at]
+[favourites_count] [utc_offset] [time_zone]
+[geo_enabled] [verified] [statuses_count]
+[lang] [status] [contributors_enabled]
+[is_translator] [is_translation_enabled] [profile_background_color]
+[profile_background_image_url] [profile_background_image_url_https] [profile_background_tile]
+[profile_image_url] [profile_image_url_https] [profile_banner_url]
+[profile_link_color] [profile_sidebar_border_color] [profile_sidebar_fill_color]
+[profile_text_color] [profile_use_background_image] [has_extended_profile]
+[default_profile] [default_profile_image] [following]
+[live_following] [follow_request_sent] [notifications]
+[muting] [blocking] [blocked_by]
+[translator_type] 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Input: screen_name
+RESULT: RonBergerEL
+You have reached one of many ends of the file. Please, restart!
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|Your location is defined as: 3, Yuliusha Slovatskoho Street, Tsytadel, Штіллерівка, Halytskyi District, Lviv, Lviv Urban Hromada, Lviv Raion, Lviv Oblast, 79000, Ukraine|
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Is it correct? [Y/N]: Y
-
-What a luck, let's build a map!
-
-Process status: 20%
-
-Process status: 36%
-
-Process status: 52%
-
-Process status: 68%
-
-Process status: 84%
-
-Process status: 100%
-
-Find your map at: Map_(2015).html
-![img.png](img.png)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

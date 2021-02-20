@@ -46,10 +46,14 @@ def navigate_json(file):
     f_str = ""
     count = 0
     for key in key_list:
-        if count > 0:
-            if count % 3 == 0:
-                f_str += "[" + key + "]" + "\n"
-                count += 1
+        if len(key_list) > 4:
+            if count > 0:
+                if count % 3 == 0:
+                    f_str += "[" + key + "]" + "\n"
+                    count += 1
+                else:
+                    f_str += "[" + key + "]" + " "
+                    count += 1
             else:
                 f_str += "[" + key + "]" + " "
                 count += 1
@@ -64,7 +68,6 @@ def navigate_json(file):
         if len(file[req]) > 0:
             req_2 = input("Choose index between 0 and " + str(len(file[req]) - 1) + ": ")
             if type(file[req][int(req_2)]) is dict:
-                res = file[req][int(req_2)]
                 return navigate_json(file[req][int(req_2)])
             else:
                 return file[req][int(req_2)]
@@ -82,5 +85,6 @@ if __name__ == "__main__":
     path = input("Input: ")
     print("\n")
     json_response = get_json_dict(path)
-    print(navigate_json(json_response))
+    print("RESULT: " + str(navigate_json(json_response)))
+    print("You have reached one of many ends of the file. Please, restart!")
 

@@ -1,10 +1,11 @@
-import requests
-import pprint
+"""lol"""
 import json
-import os
 
 
-def get_json_dict(json_file):
+def get_json_dict(json_file: str):
+    """
+    This function takes json file and if file is in list, coverts it to dict
+    """
     with open(json_file, 'r', encoding='utf-8') as file:
         data = json.load(file)
         if type(data) is list:
@@ -13,34 +14,29 @@ def get_json_dict(json_file):
             return data
 
 
-# base_url = "https://api.twitter.com/"
-# access_token = "AAAAAAAAAAAAAAAAAAAAALGUMwEAAAAAmILu6iQzNkREUy4mdleOVgRy%2FC8%3DX099gZ94kyEdZuws41gPTZiQKDCRQ3AoCHXspvHPgw1Rr9E6wk"
-# search_headers = {
-#     'Authorization': 'Bearer {}'.format(access_token)
-# }
-# search_params = {
-#     'screen_name': '@ManaByte',
-# }
-# search_url = '{}1.1/friends/list.json'.format(base_url)
-# response = requests.get(search_url, headers=search_headers, params=search_params)
-# json_response = response.json()
-
-
-def get_list_keys(dct):
+def get_list_keys(dct: dict):
+    """
+    This function gets all keys of inputted dict
+    """
     lst = []
     for key in dct.keys():
         lst.append(key)
     return lst
 
 
-def border_msg(msg):
+def border_msg(msg: str):
+    """
+    This function creates boarders in the top and bottom of text
+    """
     row = len(msg)
-    h = ''.join(['+'] + ['-' *row] + ['+'])
-    # result = h + '\n'"|"+msg+"|"'\n' + h
+    h = ''.join(['+'] + ['-' * row] + ['+'])
     return h + "\n" + msg + "\n" + h
 
 
 def navigate_json(file):
+    """
+    This function with the help of recursion help to navigate through json file
+    """
     key_list = get_list_keys(file)
     print("Choose your way:")
     f_str = ""
@@ -76,8 +72,6 @@ def navigate_json(file):
     else:
         return file[req]
 
-
-# pprint.pprint(json_response)
 
 if __name__ == "__main__":
     print(border_msg("Enter .json file name"))
